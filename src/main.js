@@ -5,15 +5,25 @@ import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
+import VueCircleSlider from 'vue-circle-slider'
+
+import Worker from './metronome.worker.js'
 
 Vue.use(Vuetify)
+Vue.use(VueCircleSlider)
 
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
-new Vue({
+var myapp = new Vue({
   el: '#app',
+  data: {
+    timerWorker: null
+  },
+  created: function () {
+    this.timerWorker = new Worker()
+  },
   router,
   components: { App },
   template: '<App/>'
 })
+myapp.play = false

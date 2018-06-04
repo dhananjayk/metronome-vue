@@ -71,6 +71,12 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.worker\.js$/,
+        use: { loader: 'worker-loader',
+              options: { name: 'metronome.worker.[hash].js' }
+        }
       }
     ]
   }
