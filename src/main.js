@@ -5,12 +5,10 @@ import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
-import VueCircleSlider from 'vue-circle-slider'
 
 import Worker from './metronome.worker.js'
 
 Vue.use(Vuetify)
-Vue.use(VueCircleSlider)
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */
