@@ -6,20 +6,12 @@ import router from './router'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 
-import Worker from './metronome.worker.js'
-
 Vue.use(Vuetify)
 
 Vue.config.productionTip = false
 /* eslint-disable no-new */
 var myapp = new Vue({
   el: '#app',
-  data: {
-    timerWorker: null
-  },
-  created: function () {
-    this.timerWorker = new Worker()
-  },
   router,
   components: { App },
   template: '<App/>'
